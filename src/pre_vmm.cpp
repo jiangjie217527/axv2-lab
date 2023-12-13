@@ -24,21 +24,14 @@ int main(){
 	for(int i=0;i<len;i++)scanf("%d",x+i);
 	clock_t start,finish;
 	start = clock();
-/*	
+
 	for (int j=0;j<len;j++)
 		for (int i=0;i<len;i++)
-			m2[j][i]=  m1[j][i] * x[i];
-	for (int j=0;j<len;j++)
-		for (int i=0;i<len;i++)
-			ans[i] += (ll) m2[j][i];
-*/
-	 	for (int j=0;j<len;j++)
-			for (int i=0;i<len;i++)
-				ans[i] +=  m1[j][i] * x[i];
+			ans[j] +=  m1[j][i] * x[i];
 
 	finish = clock();
 	cout<<"读入完毕到准备输出的运行时间："<<fixed<<setprecision(8)<< double(finish-start)/CLOCKS_PER_SEC<<"S"<<endl;
-	freopen("data/vecm.out","w",stdout);
+	freopen("data/vmm.out","w",stdout);
 	for(int i=0;i<len;i++){
 		printf("%lld ",ans[i]);
 	}

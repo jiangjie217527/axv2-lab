@@ -43,7 +43,7 @@ int main(){
 	}
 	for (int j=0;j<len;j++)
 		for (int i=0;i<len;i++)
-			ans[i] += (ll) m2[j][i];
+			ans[j] += (ll) m2[j][i];
 
 	finish = clock();
 	cout<<"读入完毕到准备输出的运行时间："<<fixed<<setprecision(8)<< double(finish-start)/CLOCKS_PER_SEC<<"S"<<endl;
