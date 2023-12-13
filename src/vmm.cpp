@@ -7,7 +7,7 @@ using namespace std;
 #define ll long long
 
 int main(){
-	freopen("vmm.in","r",stdin);
+	freopen("data/vmm.in","r",stdin);
 	int len,tlen;
 	cin>>len;
 	tlen = len/8;
@@ -47,7 +47,7 @@ int main(){
 
 	finish = clock();
 	cout<<"读入完毕到准备输出的运行时间："<<fixed<<setprecision(8)<< double(finish-start)/CLOCKS_PER_SEC<<"S"<<endl;
-	freopen("vmm.out","w",stdout);
+	freopen("data/vmm.out","w",stdout);
 	for(int i=0;i<len;i++){
 		printf("%lld ",ans[i]);
 	}
