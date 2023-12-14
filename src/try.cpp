@@ -13,7 +13,7 @@ int main(){
 	x = (__m256i*)a;
 	y = (__m256i*)b;
 	z = (__m256i*)c;
-	//*z = _mm256_mullo_epi64(*x,*y);
+	*z = _mm256_mullo_epi32(*x,*y);
 	for(int i=0;i<4;i++)cout<<c[i]<<" ";
 	cout<<endl;
 	return 0;

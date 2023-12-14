@@ -10,11 +10,9 @@ int main(){
 	freopen("data/vmm.in","r",stdin);
 	int len;
 	cin>>len;
-	int **m1 = new int*[len];
-	int **m2 = new int*[len];
+	int **m1 = new int*[len];//m1 为输入的第一个方阵
 	for(int i=0;i<len;i++){
 		m1[i] = new int[len];
-		m2[i] = new int[len];
 	}
 	int *x = new int[len];
 	ll *ans = new ll[len]();

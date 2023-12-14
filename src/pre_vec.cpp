@@ -17,7 +17,7 @@ int main(){
 	for(int i=0,x;i<len;i++){
 		scanf("%d",v2+i);
 	}
-	int *p1 = v1,*p2 = v2,*p3 = v3;
+	int *p1 = v1,*p2 = v2,*p3 = v3;//这里为了和vecmult.cpp一致所以多定义了3个指针，其实不需要，但是不重要。
 	clock_t start,finish;
 	start = clock();
 	for(int i = 0;i<len;i++){

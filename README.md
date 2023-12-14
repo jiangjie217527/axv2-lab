@@ -1,6 +1,23 @@
+# 运行环境
+
+OS: Ubuntu 22.04.3 LTS
+
+CPU: Intel® Core™ i7-6500U CPU @ 2.50GHz × 4（双核四线程）
+
+内存：DDR3 16.0G 1600MHz 双通道
+
+g++ -v: version 11.4.0 (Ubuntu 11.4.0-1ubuntu1~22.04)
+
 # 运行说明
 
-首先在根目录使用make编译并得到随机数据
+首先在根目录使用make编译
+
+使用
+~~~
+make new_data_1
+make new_data_2
+~~~
+分别得到1和2的随机数据
 
 然后使用
 
@@ -9,7 +26,7 @@ sh run_task1.sh
 sh run_task2.sh
 ~~~
 
-得到task1与task2数据
+得到task1与task2的运行时间数据
 
 如果需要重新生成数据，先确定数据大小，如果需要修改则修改产生数据的cpp
 
