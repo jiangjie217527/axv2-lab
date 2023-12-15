@@ -10,35 +10,36 @@ int main(){
 	freopen("data/vmm.in","r",stdin);
 	int len,tlen;
 	cin>>len;
-	tlen = len/4;
-	ll **m1 = new ll*[len];
-	for(int i=0;i<len;i++)
-		m1[i] = (ll*)aligned_alloc(64,len*sizeof(ll));
-	ll *x = (ll*)aligned_alloc(64,len*sizeof(ll));
-	ll *t = (ll*)aligned_alloc(64,4*sizeof(ll));
+	tlen = len/8;
+	int **m1 = new int*[len];// m1为输入的方针
+	for(int i=0;i<len;i++){
+		m1[i] = (int*)aligned_alloc(32,len*sizeof(int));
+	}
+	int *x = (int*)aligned_alloc(32,len*sizeof(int));//x是输入的向量
+	int *t = (int*)aligned_alloc(32,8*sizeof(int));//t暂存每次计算得到的一组数据，接下来对得到的这组数据进行累加
 	ll *ans = (ll*)aligned_alloc(64,len*sizeof(ll));
 	for(int i=0;i<len;i++)
 		for(int j=0;j<len;j++)
-			scanf("%lld",m1[i]+j);
-	for(int i=0;i<len;i++)scanf("%lld",x+i);
-	__m256i *a[len],*b,*p,*tmp;//p每次循环开始指向输入的向量,tmp是累加每行的结果
-	for(int i=0;i<len;i++)
+			scanf("%d",m1[i]+j);
+	for(int i=0;i<len;i++)scanf("%d",x+i);
+	__m256i *a[len],*b,*tmp,*p;//a,b对应输入，tmp对应临时t空间，p是临时指针，每次循环开始指向b(输入的向量)
+	for(int i=0;i<len;i++){
 		a[i] = (__m256i*)m1[i];
+	}
 	b = (__m256i*)x;
 	tmp = (__m256i*)t;
 	clock_t start,finish;
 	start = clock();
 	
 	for (int j=0;j<len;j++){
-		p=b;
-		for (int i=0;i<4;i++) t[i] = 0;	
+		p=b;	
 		for (int i=0;i<tlen;i++){
-			*tmp = _mm256_add_epi64(*tmp,_mm256_mullo_epi32(*a[j],*p));
+			*tmp = _mm256_mullo_epi32(*a[j],*p);
+			for(int k=0;k<8;k++){
+				ans[j] += t[k];
+			}
 			a[j]++;
 			p++;
-		}
-		for (int i=0;i<4;i++){
-			ans[j] += t[i];//累加结果，所需时间可以忽略
 		}
 	}
 
