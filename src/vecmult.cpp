@@ -3,6 +3,7 @@
 #include<cstdio>
 #include<time.h>
 #include<iomanip>
+#include<stdlib.h>
 using namespace std;
 //正常版（非疯癫版）
 int main(){

@@ -33,7 +33,7 @@ int main(){
 		p=b;
 		for (int i=0;i<4;i++) t[i] = 0;	
 		for (int i=0;i<tlen;i++){
-			*tmp = _mm256_add_epi64(*tmp,_mm256_mullo_epi32(*a[j],*p));
+			*tmp = _mm256_add_epi64(*tmp,_mm256_mul_epi32(*a[j],*p));
 			a[j]++;
 			p++;
 		}
