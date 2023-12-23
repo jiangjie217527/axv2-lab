@@ -17,6 +17,7 @@ int main(){
 	ll *x = (ll*)aligned_alloc(64,len*sizeof(ll));
 	ll *t = (ll*)aligned_alloc(64,4*sizeof(ll));
 	ll *ans = (ll*)aligned_alloc(64,len*sizeof(ll));
+    for(int i=0;i<len;i++) ans[i] = 0;
 	for(int i=0;i<len;i++)
 		for(int j=0;j<len;j++)
 			scanf("%lld",m1[i]+j);

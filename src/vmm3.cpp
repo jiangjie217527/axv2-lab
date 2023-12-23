@@ -18,6 +18,7 @@ int main(){
 	int *x = (int*)aligned_alloc(32,len*sizeof(int));//x是输入的向量
 	int *t = (int*)aligned_alloc(32,8*sizeof(int));//t暂存每次计算得到的一组数据，接下来对得到的这组数据进行累加
 	ll *ans = (ll*)aligned_alloc(64,len*sizeof(ll));
+    for(int i=0;i<len;i++) ans[i] = 0;
 	for(int i=0;i<len;i++)
 		for(int j=0;j<len;j++)
 			scanf("%d",m1[i]+j);
