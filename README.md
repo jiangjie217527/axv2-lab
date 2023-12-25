@@ -10,6 +10,8 @@ g++ -v: version 11.4.0 (Ubuntu 11.4.0-1ubuntu1~22.04)
 
 # 运行说明
 
+**注**：如果是windows环境，只需把aligned_alloc改成malloc并且加上头文件#include<stdlib.h>（如果没有的话）即可
+
 首先在根目录使用make编译
 
 使用
