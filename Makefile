@@ -16,6 +16,8 @@ vmm2: src/vmm2.cpp
 vmm3: src/vmm3.cpp
 	g++ -mavx2 src/vmm3.cpp -o bin/vmm3
 
+data: new_data_1 new_data_2
+	
 new_data_1:
 	./bin/data1
 new_data_2:
